@@ -26,7 +26,7 @@ public class CommentStepdefs{
     private final static String PAGE_URL =
             "http://www.bbc.co.uk/blogs/test/entries/f5f3031a-1a29-44ee-b2f8-86e78bfd57b0#comments";
     private CommentsTestPage commentsTestPage;
-    protected static WebDriver driver;
+    private static WebDriver driver;
 
 
 

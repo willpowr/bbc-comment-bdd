@@ -58,11 +58,11 @@ public class SignInPage extends PageObject {
     }
 
 
-    public CommentsTestPage signInUser(String username, String password){
+    public void signInUser(String username, String password){
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         submitButton.click();
-        return new CommentsTestPage(driver);
+        new CommentsTestPage(driver);
     }
 
     /**
