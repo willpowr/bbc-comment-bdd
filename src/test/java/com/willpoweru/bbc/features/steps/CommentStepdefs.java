@@ -11,7 +11,6 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -62,7 +61,7 @@ public class CommentStepdefs{
     @When("^a user who is \"([^\"]*)\" signs in to work with comments$")
     public void a_user_signs_in_to_work_with_comments(String userAge) throws Throwable {
         LOGGER.info("Entering: A user who is " + userAge + " signs in to work with comments");
-        new SignIn().SignIn(commentsTestPage, userAge);
+        new SignIn().signIn(commentsTestPage, userAge);
     }
 
     @Then("^a comment sign in status message \"([^\"]*)\" is shown$")
@@ -75,7 +74,7 @@ public class CommentStepdefs{
     @Given("^a user old enough to comment is signed in$")
     public void a_user_old_enough_to_comment_is_signed_in() throws Throwable {
         LOGGER.info("a user old enough to comment is signed in");
-        new SignIn().SignIn(commentsTestPage, "old_enough");
+        new SignIn().signIn(commentsTestPage, "old_enough");
     }
 
     @When("^a user enters a comment \"([^\"]*)\"$")

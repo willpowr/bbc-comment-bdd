@@ -9,7 +9,7 @@ import com.willpoweru.bbc.pages.SignInPage;
 public class SignIn {
     private SignInPage signInPage;
 
-    public void SignIn(CommentsTestPage page, String userType){
+    public void signIn(CommentsTestPage page, String userType){
         signInPage = page.clickSignIn1Link();
 
         if (userType.equals("old_enough")) {

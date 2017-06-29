@@ -27,9 +27,16 @@ public class CommentsTestPage extends  PageObject{
     private WebElement commentsLink2; //     driver.findElements(By.className("cf"));
 
 
-    @FindBy(css = "a.id4-cta-registerLink")
-    @CacheLookup
-    private WebElement registerLink;
+//    @FindBy(linkText = "Register")
+//    @CacheLookup
+//    private WebElement registerLink;
+
+    private WebElement registerLink(){
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame("bbc-blogs-comments-iframe");
+        return driver.findElement(By.linkText("Register"));
+    }
+
 
 
     @FindBy(id = "idcta-link")
@@ -153,6 +160,18 @@ public class CommentsTestPage extends  PageObject{
     public String signedInMessageText () {
         return signedInMessage().getText();
     }
+
+
+    /**
+     * Click on Register Link.
+     *
+     * @return the bbcTestComments class instance.
+     */
+    public RegisterAgePage clickRegisterLink() {
+        registerLink().click();
+        return new RegisterAgePage(driver);
+    }
+
 
     /**
      * Comment Submission Message.
